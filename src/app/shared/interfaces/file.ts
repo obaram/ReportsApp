@@ -1,4 +1,4 @@
 export interface File {
-  filenme: string;
+  filename: string;
   filesize: string;
 }

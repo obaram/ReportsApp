@@ -10,7 +10,6 @@ import {loadReports} from './reports/state/reports.actions';
 })
 export class AppComponent {
 
-  constructor(private store: Store<ReportsState>) {
-    this.store.dispatch(loadReports());
+  constructor() {
   }
 }
