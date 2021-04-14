@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {State, Store} from '@ngrx/store';
+import {ReportsState} from './shared/interfaces/reports-state';
+import {loadReports} from './reports/state/reports.actions';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ReportsApp';
+
+  constructor(private store: Store<ReportsState>) {
+    this.store.dispatch(loadReports());
+  }
 }
