@@ -1,10 +1,25 @@
 # ReportsApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.</br>
+<b>Before start this project, please make sure that JSON Server is running (npm run api)</b>
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## JSON Server
+
+Run 'npm run api' to start mocked development API</br>
+
+***********************************
+<b>Resources</b></br>
+http://localhost:9020/reports
+ 
+</br></br>
+
+<b>Home</b1></br>
+http://localhost:9020
+***********************************
 
 ## Code scaffolding
 
