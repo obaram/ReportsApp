@@ -1,1 +1,10 @@
-<p>reports-list works!</p>
+<div *ngFor="let report of (reports$ | async)">
+  <app-report-row [item]="report">
+    <div *ngIf="report.files.length === 1; else accordion">
+      Download {{report?.files[0].filename}}
+    </div>
+    <ng-template #accordion>
+      <!-- TODO: Add accordion. -->
+    </ng-template>
+  </app-report-row>
+</div>

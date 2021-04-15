@@ -1,0 +1,18 @@
+:host{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--basic-padding) 0 var(--basic-padding) 0;
+  border-bottom: var(--reports-row-border);
+  width: 100%;
+
+  main{
+    max-width: 75%;
+    min-width: 75%;
+  }
+
+  h2{
+    padding-bottom: var(--reports-row-title-padding);
+  }
+}

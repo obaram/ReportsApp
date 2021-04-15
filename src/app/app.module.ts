@@ -12,12 +12,14 @@ import {ReportsEffects} from './reports/state/reports.effects';
 import {ReportsService} from './shared/services/reports.service';
 import {HttpClientModule} from '@angular/common/http';
 import {ReportsListComponent} from './reports/reports-list/reports-list.component';
+import { ReportRowComponent } from './reports/reports-list/report-row/report-row.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReportsListComponent
+    ReportsListComponent,
+    ReportRowComponent
   ],
   imports: [
     BrowserModule,
