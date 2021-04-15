@@ -15,7 +15,13 @@ export class ReportsEffects {
   loadReports$ = createEffect(() => this.actions.pipe(
     ofType(ReportsActions.loadReports),
     switchMap(() => this.reportsService.getReports()),
-    map((items) => ReportsActions.loadReportsSuccess({items})),
+    map((items) => {
+      const mappedItems = items.reduce((acc, report, index) => {
+        acc[index] = {...report, date: new Date(report.date)};
+        return [...acc];
+      }, []);
+      return ReportsActions.loadReportsSuccess({items: mappedItems});
+    }),
     catchError(() => of(loadReportsError))
   ));
 }

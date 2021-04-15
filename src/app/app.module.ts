@@ -13,13 +13,29 @@ import {ReportsService} from './shared/services/reports.service';
 import {HttpClientModule} from '@angular/common/http';
 import {ReportsListComponent} from './reports/reports-list/reports-list.component';
 import { ReportRowComponent } from './reports/reports-list/report-row/report-row.component';
+import { SearchBarComponent } from './reports/search-bar/search-bar.component';
+import { SelectComponent } from './reports/search-bar/select-component/select.component';
+import {ReportsComponent} from './reports/reports.component';
+import { InputComponent } from './reports/search-bar/input/input.component';
+import {FormsModule} from "@angular/forms";
+import { TagComponent } from './reports/tag/tag.component';
+import { HighlightDirective } from './shared/directives/highlight.directive';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import { SortByPipe } from './shared/pipes/sort-by.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ReportsListComponent,
-    ReportRowComponent
+    ReportRowComponent,
+    SearchBarComponent,
+    SelectComponent,
+    ReportsComponent,
+    InputComponent,
+    TagComponent,
+    HighlightDirective,
+    SortByPipe
   ],
   imports: [
     BrowserModule,
@@ -30,6 +46,8 @@ import { ReportRowComponent } from './reports/reports-list/report-row/report-row
     StoreDevtoolsModule.instrument({
       logOnly: environment.production,
     }),
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [ReportsService],
   bootstrap: [AppComponent]

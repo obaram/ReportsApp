@@ -4,7 +4,7 @@
   align-items: flex-start;
   justify-content: space-between;
   padding: var(--basic-padding) 0 var(--basic-padding) 0;
-  border-bottom: var(--reports-row-border);
+  border-bottom: var(--reports-list-row-border);
   width: 100%;
 
   main{
@@ -13,6 +13,6 @@
   }
 
   h2{
-    padding-bottom: var(--reports-row-title-padding);
+    padding-bottom: var(--reports-list-row-title-padding);
   }
 }

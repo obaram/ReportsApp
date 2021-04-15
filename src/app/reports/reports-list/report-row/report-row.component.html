@@ -1,6 +1,7 @@
 <aside>
-  <p>{{item.date}}</p>
-  <p>{{item.category}}</p>
+  <p>{{item.date | date: 'dd.mm.yyyy'}}</p>
+  <p>{{item.date | date: 'shortTime'}}</p>
+  <p>Raporty {{item.category}}</p>
 </aside>
 <main>
   <h2>{{item.title}}</h2>

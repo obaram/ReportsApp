@@ -1,6 +1,7 @@
-<div *ngFor="let report of (reports$ | async)">
+<ng-container *ngIf="items?.length; else noContent">
+<div *ngFor="let report of items">
   <app-report-row [item]="report">
-    <div *ngIf="report.files.length === 1; else accordion">
+    <div *ngIf="report?.files?.length === 1; else accordion">
       Download {{report?.files[0].filename}}
     </div>
     <ng-template #accordion>
@@ -8,3 +9,7 @@
     </ng-template>
   </app-report-row>
 </div>
+</ng-container>
+<ng-template #noContent>
+  <p class="text-center">There is no matching reports...</p>
+</ng-template>

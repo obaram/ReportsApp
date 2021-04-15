@@ -1,12 +1,25 @@
-@import "app/styles/constants";
 @import "app/styles/reset";
+@import "app/styles/constants";
+@import "app/styles/mixin";
 
-html, body{
+body{
   font-family: Arial;
-  background-color: var(--main-background);
+  background-color: var(--primary-background-color);
 }
 
 h2{
-  font-size: 1.3em;
+  font-size: var(--secodary-title-size);
   font-weight: bold;
+}
+
+.flex-row{
+  @include flex(row);
+}
+
+.flex-column{
+  @include flex(column);
+}
+
+.text-center{
+  text-align: center;
 }

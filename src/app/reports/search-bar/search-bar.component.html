@@ -1,0 +1,9 @@
+<div class="flex-row">
+  <app-select [options]="options" (selectionChanged)="selectionChanged($event)"></app-select>
+  <app-input (textChanged)="textFilterChanged($event)" (filter)="filter.emit(filters)"></app-input>
+</div>
+<div class="tags-container flex-row">
+  <ng-container *ngFor="let tag of tags">
+    <app-tag appHighlight [value]="tag" (clicked)="tagChanged($event)"></app-tag>
+  </ng-container>
+</div>
