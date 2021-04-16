@@ -1,4 +1,4 @@
-:host{
+:host {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -7,12 +7,39 @@
   border-bottom: var(--reports-list-row-border);
   width: 100%;
 
-  main{
+  aside {
+    .date-container {
+      margin-bottom: var(--medium-margin);
+      font-weight: bold;
+
+      p {
+        margin-bottom: var(--tiny-margin);
+      }
+    }
+  }
+
+  main {
     max-width: 75%;
     min-width: 75%;
   }
 
-  h2{
+  h2 {
     padding-bottom: var(--reports-list-row-title-padding);
+  }
+
+  footer {
+    width: 100%;
+    font-size: .95rem;
+    color: var(--secondary-color);
+    margin-top: var(--medium-margin);;
+
+    span {
+      margin-right: var(--basic-margin);
+    }
+
+    div, span, app-accordion {
+      cursor: pointer;
+    }
+
   }
 }

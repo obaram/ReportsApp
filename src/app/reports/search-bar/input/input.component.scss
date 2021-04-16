@@ -20,6 +20,11 @@
       color: var(--reports-button-background-color);
       padding: var(--reports-button-padding);
       border-radius: 1em;
+      cursor: pointer;
+
+      &:hover{
+        background-color: var(--reports-button-hover-color);
+      }
     }
   }
 }

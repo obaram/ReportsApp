@@ -1,0 +1,19 @@
+:host {
+  flex: 1;
+  cursor: pointer;
+
+  .accordion-title{
+    .icon-container{
+      margin-left: .25rem;
+    }
+  }
+
+  .accordion-body {
+    border-top: var(--reports-list-row-border);
+    padding-top: var(--small-padding);
+    margin-top: var(--small-margin);
+    p {
+      padding: var(--tiny-padding) 0;
+    }
+  }
+}

@@ -22,6 +22,7 @@ import { TagComponent } from './reports/tag/tag.component';
 import { HighlightDirective } from './shared/directives/highlight.directive';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { SortByPipe } from './shared/pipes/sort-by.pipe';
+import { AccordionComponent } from './shared/components/accordion/accordion.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { SortByPipe } from './shared/pipes/sort-by.pipe';
     InputComponent,
     TagComponent,
     HighlightDirective,
-    SortByPipe
+    SortByPipe,
+    AccordionComponent
   ],
   imports: [
     BrowserModule,
