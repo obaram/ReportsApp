@@ -2,6 +2,8 @@ import {ReportsState} from '../../shared/interfaces/reports-state';
 import {Action, createReducer, on} from '@ngrx/store';
 import * as ReportsActions from './reports.actions';
 import {Report} from '../../shared/interfaces/report';
+import {FiltersState} from "../../shared/interfaces/filters-state";
+import {filter} from "rxjs/operators";
 
 export const initialState: ReportsState = {
   items: [],
@@ -41,10 +43,10 @@ const reducer = createReducer(
     ...state,
     pending: false,
   })),
-  on(ReportsActions.setFilters, (state: ReportsState, {filters}) => ({
+  on(ReportsActions.setFilters, ReportsActions.setDefaultFiltersSuccess, (state: ReportsState, {filters}) => ({
     ...state,
     filters
-  }))
+  })),
 );
 
 export function reportsReducer(state: ReportsState, action: Action): ReportsState {
