@@ -43,7 +43,10 @@ const reducer = createReducer(
   })),
   on(ReportsActions.setFilters, ReportsActions.setDefaultFiltersSuccess, (state: ReportsState, {filters}) => ({
     ...state,
-    filters
+    filters: {
+      ...filters,
+      year: filters.year ? filters.year : state.filters.year
+    }
   })),
 );
 
