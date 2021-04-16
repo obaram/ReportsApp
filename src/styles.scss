@@ -7,9 +7,18 @@ body{
   background-color: var(--primary-background-color);
 }
 
+h1 {
+  font-size: var(--main-title-size);
+  padding: var(--basic-padding);
+}
+
 h2{
   font-size: var(--secodary-title-size);
   font-weight: bold;
+}
+
+.text-center{
+  text-align: center;
 }
 
 .flex-row{
@@ -18,8 +27,4 @@ h2{
 
 .flex-column{
   @include flex(column);
-}
-
-.text-center{
-  text-align: center;
 }

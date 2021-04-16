@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Subject} from 'rxjs';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import {Subject, Subscription} from 'rxjs';
 import {FiltersState} from '../../shared/interfaces/filters-state';
 import {Filter} from '../../shared/interfaces/filter';
 import {FilterType} from '../../shared/enums/filter-type';
@@ -9,41 +9,44 @@ import {FilterType} from '../../shared/enums/filter-type';
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.scss']
 })
-export class SearchBarComponent implements OnInit {
+export class SearchBarComponent implements OnInit, OnDestroy {
 
-  @Input() options: number[];
-  @Input() tags: string[];
-  @Output() filter: EventEmitter<FiltersState> = new EventEmitter<FiltersState>();
+  @Input() public options: number[];
+  @Input() public tags: string[];
+  @Output() public filter: EventEmitter<FiltersState> = new EventEmitter<FiltersState>();
+
+  public subscription = new Subscription();
   public filterChanged: Subject<Filter> = new Subject<Filter>();
-
   public filters: FiltersState = {
-    year: null,
     tags: new Set(),
-    searchValue: null
+    text: null,
+    year: null
   };
 
   public ngOnInit(): void {
-    this.filterChanged.subscribe((filter) => {
-      const clone = Object.assign({}, this.filters);
+    this.subscription.add(this.filterChanged.subscribe((filter) => {
+      const filters = Object.assign({}, this.filters);
       switch (filter.type) {
         case FilterType.Year:
-          clone.year = filter.value as number;
+          filters.year = filter.value as number;
           break;
         case FilterType.Text:
-          clone.searchValue = filter.value as string;
+          filters.text = filter.value as string;
           break;
         case FilterType.Tag:
-          if (clone.tags.has(filter.value as string)) {
-            clone.tags.delete(filter.value as string);
+          if (filters.tags.has(filter.value as string)) {
+            filters.tags.delete(filter.value as string);
           } else {
-            clone.tags = clone.tags.add(filter.value as string);
+            filters.tags = filters.tags.add(filter.value as string);
           }
           break;
-        default:
-          break;
       }
-      this.filters = {...clone};
-    });
+      this.filters = {...filters};
+    }));
+  }
+
+  public ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   public selectionChanged(value: number): void {

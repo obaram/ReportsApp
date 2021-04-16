@@ -8,7 +8,7 @@ export const initialState: ReportsState = {
   filters: {
     tags: new Set<string>(),
     year: null,
-    searchValue: null,
+    text: null,
   },
   tags: new Set<string>(),
   years: new Set<number>(),
@@ -41,10 +41,10 @@ const reducer = createReducer(
     ...state,
     pending: false,
   })),
-  on(ReportsActions.setFilters, (state: ReportsState, {filters}) => ({
+  on(ReportsActions.setFilters, ReportsActions.setDefaultFiltersSuccess, (state: ReportsState, {filters}) => ({
     ...state,
     filters
-  }))
+  })),
 );
 
 export function reportsReducer(state: ReportsState, action: Action): ReportsState {

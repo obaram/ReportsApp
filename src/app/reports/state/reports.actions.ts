@@ -10,3 +10,7 @@ export const loadReportsError = createAction(`${actionContext} Load reports erro
 
 export const setFilters = createAction(`${actionContext} Set filters`, props<{filters: FiltersState}>());
 
+export const setDefaultFilters = createAction(`${actionContext} Set default filters`);
+export const setDefaultFiltersSuccess = createAction(`${actionContext} Set default filters success`, props<{filters: FiltersState}>());
+export const setDefaultFiltersError = createAction(`${actionContext} Set default filters error`, props<{filters: FiltersState}>());
+
