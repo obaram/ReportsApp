@@ -2,15 +2,13 @@ import {ReportsState} from '../../shared/interfaces/reports-state';
 import {Action, createReducer, on} from '@ngrx/store';
 import * as ReportsActions from './reports.actions';
 import {Report} from '../../shared/interfaces/report';
-import {FiltersState} from "../../shared/interfaces/filters-state";
-import {filter} from "rxjs/operators";
 
 export const initialState: ReportsState = {
   items: [],
   filters: {
     tags: new Set<string>(),
     year: null,
-    searchValue: null,
+    text: null,
   },
   tags: new Set<string>(),
   years: new Set<number>(),

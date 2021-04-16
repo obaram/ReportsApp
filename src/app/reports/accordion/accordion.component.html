@@ -1,18 +1,14 @@
 <ng-container *ngIf="items?.length > 1; else singleItem">
   <div class="accordion-title flex-row" (click)="active = !active">
-    <div>
-      {{title + ' ' + '(' + items?.length + ')'}}
-    </div>
+    <div>{{title + ' ' + '(' + items?.length + ')'}}</div>
     <div class="icon-container">
       <fa-icon [icon]="icon"></fa-icon>
     </div>
   </div>
   <div class="accordion-body flex-column" *ngIf="active">
-    <p *ngFor="let item of items">{{item.filename + '.pdf'}}</p>
+    <p *ngFor="let item of items" class="accordion-row">{{item.filename + '.pdf'}}</p>
   </div>
 </ng-container>
 <ng-template #singleItem>
-<span>
-  Download {{items[0].filename + '.pdf'}}
-</span>
+  <span>Download {{items[0].filename + '.pdf'}}</span>
 </ng-template>

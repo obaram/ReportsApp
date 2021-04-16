@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {environment} from '../../../environments/environment';
+import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
-import {Report} from '../interfaces/report';
+import {Report} from '../shared/interfaces/report';
 
 @Injectable()
 export class ReportsService {

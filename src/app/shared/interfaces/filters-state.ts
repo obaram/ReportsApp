@@ -1,5 +1,5 @@
 export interface FiltersState {
   tags: Set<string>;
-  searchValue: string;
+  text: string;
   year: number;
 }

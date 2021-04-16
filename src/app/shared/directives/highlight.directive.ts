@@ -1,4 +1,4 @@
-import {Directive, ElementRef, HostListener, Renderer2} from '@angular/core';
+import {Directive, ElementRef, HostListener} from '@angular/core';
 
 
 @Directive({
@@ -19,7 +19,7 @@ export class HighlightDirective {
     this.active = !this.active;
   }
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer2) {
+  constructor(private elementRef: ElementRef) {
   }
 
   private highlight(color: string): void {

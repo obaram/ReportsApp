@@ -2,8 +2,8 @@
   flex: 1;
   cursor: pointer;
 
-  .accordion-title{
-    .icon-container{
+  .accordion-title {
+    .icon-container {
       margin-left: .25rem;
     }
   }
@@ -12,7 +12,8 @@
     border-top: var(--reports-list-row-border);
     padding-top: var(--small-padding);
     margin-top: var(--small-margin);
-    p {
+
+    .accordion-row {
       padding: var(--tiny-padding) 0;
     }
   }

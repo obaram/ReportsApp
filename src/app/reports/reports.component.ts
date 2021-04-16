@@ -6,9 +6,9 @@ import {
   filterByText,
   filterByYear,
   getFilters,
-  getOptions,
   getReports,
-  getTags
+  getTags,
+  getYears
 } from './state/reports.selectors';
 import {Store} from '@ngrx/store';
 import {ReportsState} from '../shared/interfaces/reports-state';
@@ -24,14 +24,12 @@ import {FiltersState} from '../shared/interfaces/filters-state';
 export class ReportsComponent implements OnInit {
 
   public tags$: Observable<Set<string>> = this.store.select(getTags);
-  public options$: Observable<number[]> = this.store.select(getOptions);
+  public options$: Observable<number[]> = this.store.select(getYears);
   public reports$: Observable<Report[]> = combineLatest([this.store.select(getReports), this.store.select(getFilters)]).pipe(
-    map(filterByYear),
-    map(filterByText),
-    map(filterByTags),
+    map(filterByYear), map(filterByText), map(filterByTags)
   );
 
-  constructor(private store: Store<ReportsState>) {
+  public constructor(private store: Store<ReportsState>) {
   }
 
   public ngOnInit(): void {

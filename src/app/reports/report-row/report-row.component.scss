@@ -7,39 +7,37 @@
   border-bottom: var(--reports-list-row-border);
   width: 100%;
 
-  aside {
+  .row-aside {
     .date-container {
       margin-bottom: var(--medium-margin);
       font-weight: bold;
 
-      p {
+      .aside-category {
         margin-bottom: var(--tiny-margin);
       }
     }
   }
 
-  main {
+  .row-main {
     max-width: 75%;
     min-width: 75%;
+
+    .row-content {
+      h2 {
+        padding-bottom: var(--reports-list-row-title-padding);
+      }
+    }
   }
 
-  h2 {
-    padding-bottom: var(--reports-list-row-title-padding);
-  }
-
-  footer {
+  .row-footer {
     width: 100%;
     font-size: .95rem;
     color: var(--secondary-color);
     margin-top: var(--medium-margin);;
 
     span {
+      cursor: pointer;
       margin-right: var(--basic-margin);
     }
-
-    div, span, app-accordion {
-      cursor: pointer;
-    }
-
   }
 }

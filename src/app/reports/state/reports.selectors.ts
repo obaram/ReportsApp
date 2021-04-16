@@ -12,7 +12,7 @@ export const getTags = createSelector(getReportsState, (state: ReportsState) => 
   return state.tags;
 });
 
-export const getOptions = createSelector(getReportsState, (state: ReportsState) => {
+export const getYears = createSelector(getReportsState, (state: ReportsState) => {
   return Array.from(state.years);
 });
 
@@ -29,10 +29,10 @@ export const filterByTags = ([reports, filter]): Report[] => {
 };
 
 export const filterByText = ([reports, filter]): Report[] => {
-  if (!filter.searchValue) {
+  if (!filter.text) {
     return [reports, filter];
   }
-  return [reports.filter((report) => report.title.includes(filter.searchValue) || report.description.includes(filter.searchValue)), filter];
+  return [reports.filter((report) => report.title.includes(filter.text) || report.description.includes(filter.text)), filter];
 };
 
 export const filterByYear = ([reports, filter]): Report[] => {

@@ -1,13 +1,13 @@
 import {Injectable} from '@angular/core';
-import {ReportsService} from '../../shared/services/reports.service';
+import {ReportsService} from '../reports.service';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import * as ReportsActions from './reports.actions';
 import {loadReportsError, setDefaultFilters, setDefaultFiltersSuccess} from './reports.actions';
-import {catchError, map, switchMap, tap, withLatestFrom} from 'rxjs/operators';
-import {from, of} from 'rxjs';
+import {catchError, map, switchMap, withLatestFrom} from 'rxjs/operators';
+import {of} from 'rxjs';
 import {ReportsState} from '../../shared/interfaces/reports-state';
 import {Store} from '@ngrx/store';
-import {getFilters, getOptions} from './reports.selectors';
+import {getFilters, getYears} from './reports.selectors';
 
 @Injectable()
 export class ReportsEffects {
@@ -26,12 +26,12 @@ export class ReportsEffects {
       }, []);
       return [ReportsActions.loadReportsSuccess({items: mappedItems}), setDefaultFilters()];
     }),
-    catchError(() => of(loadReportsError))
+    catchError(() => of(loadReportsError()))
   ));
 
   setDefaultFilters$ = createEffect(() => this.actions.pipe(
     ofType(ReportsActions.setDefaultFilters),
-    withLatestFrom(this.store.select(getOptions), this.store.select(getFilters)),
+    withLatestFrom(this.store.select(getYears), this.store.select(getFilters)),
     map(([action, options, filters]) => setDefaultFiltersSuccess({filters:  {...filters, year: Math.max(...options)}}))
   ));
 }
