@@ -1,0 +1,12 @@
+:host {
+  margin-right: var(--basic-margin);
+
+  .tag {
+    width: 100px;
+    padding: 5px;
+    font-size: .8em;
+    justify-content: space-between;
+    border: var(--reports-list-row-border);
+    cursor: pointer;
+  }
+}
