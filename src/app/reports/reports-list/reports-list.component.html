@@ -1,0 +1,10 @@
+<ng-container *ngIf="items?.length; else noContent">
+  <div *ngFor="let report of items">
+    <app-report-row [item]="report">
+      <app-accordion *ngIf="report?.files?.length" [items]="report.files" [title]="'Pliki do pobrania'"></app-accordion>
+    </app-report-row>
+  </div>
+</ng-container>
+<ng-template #noContent>
+  <p class="text-center">There is no matching reports...</p>
+</ng-template>

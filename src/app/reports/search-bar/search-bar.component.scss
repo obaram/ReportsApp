@@ -1,0 +1,16 @@
+@import "../../styles/mixin";
+
+:host {
+  @include flex(column);
+  width: 75vw;
+  background-color: var(--reports-list-background);
+  padding: var(--basic-padding);
+
+  app-input {
+    flex: 1;
+  }
+
+  .tags-container {
+    margin-top: var(--basic-margin);
+  }
+}

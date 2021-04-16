@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@import "app/styles/reset";
+@import "app/styles/constants";
+@import "app/styles/mixin";
+
+body{
+  font-family: Arial;
+  background-color: var(--primary-background-color);
+}
+
+h1 {
+  font-size: var(--main-title-size);
+  padding: var(--basic-padding);
+}
+
+h2{
+  font-size: var(--secodary-title-size);
+  font-weight: bold;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.flex-row{
+  @include flex(row);
+}
+
+.flex-column{
+  @include flex(column);
+}

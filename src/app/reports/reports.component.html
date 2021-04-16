@@ -1,0 +1,3 @@
+<h1 class="text-center">Reports</h1>
+<app-search-bar [tags]="tags$ | async" [options]="options$ | async" (filter)="setFilters($event)"></app-search-bar>
+<app-reports-list [items]="reports$ | async"></app-reports-list>

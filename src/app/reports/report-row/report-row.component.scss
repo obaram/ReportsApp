@@ -1,0 +1,43 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--basic-padding) 0 var(--basic-padding) 0;
+  border-bottom: var(--reports-list-row-border);
+  width: 100%;
+
+  .row-aside {
+    .date-container {
+      margin-bottom: var(--medium-margin);
+      font-weight: bold;
+
+      .aside-category {
+        margin-bottom: var(--tiny-margin);
+      }
+    }
+  }
+
+  .row-main {
+    max-width: 75%;
+    min-width: 75%;
+
+    .row-content {
+      h2 {
+        padding-bottom: var(--reports-list-row-title-padding);
+      }
+    }
+  }
+
+  .row-footer {
+    width: 100%;
+    font-size: .95rem;
+    color: var(--secondary-color);
+    margin-top: var(--medium-margin);;
+
+    span {
+      cursor: pointer;
+      margin-right: var(--basic-margin);
+    }
+  }
+}

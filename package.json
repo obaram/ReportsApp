@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "api": "json-server --watch api/db.json --port 9020"
   },
   "private": true,
   "dependencies": {
@@ -19,7 +20,15 @@
     "@angular/platform-browser": "~11.2.9",
     "@angular/platform-browser-dynamic": "~11.2.9",
     "@angular/router": "~11.2.9",
-    "rxjs": "~6.6.0",
+    "@fortawesome/angular-fontawesome": "^0.8.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@ngrx/effects": "^11.1.0",
+    "@ngrx/store": "^11.1.0",
+    "@ngrx/store-devtools": "^11.1.0",
+    "json-server": "^0.16.3",
+    "lodash": "^4.17.21",
+    "rxjs": "^6.6.7",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },

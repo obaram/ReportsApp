@@ -1,0 +1,6 @@
+<div class="tag flex-row" (click)="tagClicked(value)">
+  <div class="text-container">{{value}}</div>
+  <div class="icon-container">
+    <fa-icon *ngIf="active" [icon]="cross"></fa-icon>
+  </div>
+</div>

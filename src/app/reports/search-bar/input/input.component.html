@@ -1,0 +1,4 @@
+<div class="input-container">
+  <input (change)="textChanged.emit($event.target.value)" type="text">
+  <button (click)="filter.emit()">Search</button>
+</div>

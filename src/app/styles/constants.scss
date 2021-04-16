@@ -1,0 +1,38 @@
+html {
+  /*MAIN*/
+
+  --basic-padding: 2rem;
+  --small-padding: .45rem;
+  --tiny-padding: .1rem;
+
+  --basic-margin: 2rem;
+  --medium-margin: 1rem;
+  --small-margin: .45rem;
+  --tiny-margin: .1rem;
+
+  --main-title-size: 2rem;
+  --secodary-title-size: 1.3rem;
+
+  /*BACKGROUNDS*/
+
+  --primary-color: #86bfbe;
+  --secondary-color: #4ebac7;
+  --tertinary-color: #206169;
+  --primary-background-color: #ededed;
+  --white-color: #ffffff;
+
+  /* REPORTS CONSTANTS */
+
+  --reports-list-background: #ffffff;
+  --reports-list-row-title-padding: 1rem;
+  --reports-list-row-border: 1px solid #e8e8e8;
+
+  --reports-input-padding: var(--small-margin);
+  --seports-select-padding: var(--small-margin);
+  --reports-input-field-border: 2px solid #8f8f8f;
+
+  --reports-button-color: var(--secondary-color);
+  --reports-button-background-color: var(--white-color);
+  --reports-button-hover-color: var(--tertinary-color);
+  --reports-button-padding: var(--small-padding);
+}

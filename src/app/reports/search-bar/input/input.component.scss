@@ -1,0 +1,30 @@
+@import "src/styles";
+
+:host {
+  .input-container {
+    @include flex(row);
+    border-bottom: var(--reports-input-field-border);
+    position: relative;
+    flex: 1;
+
+    input {
+      flex: 1;
+      padding: var(--reports-input-padding);
+    }
+
+    button {
+      position: absolute;
+      right: 0;
+      bottom: 10px;
+      background-color: var(--reports-button-color);
+      color: var(--reports-button-background-color);
+      padding: var(--reports-button-padding);
+      border-radius: 1em;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--reports-button-hover-color);
+      }
+    }
+  }
+}
